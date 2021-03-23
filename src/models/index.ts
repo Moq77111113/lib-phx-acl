@@ -3,7 +3,8 @@
  * 
  */
 enum HospDefRights {
-    _Select = 1,
+    _None,
+    _Select,
     _Add,
     _SelectAndAdd,
     _AccessPoint,
@@ -24,7 +25,8 @@ enum HospDefRights {
  * Rights for the Virtual Entry points
  */
 enum VirtualEntryPointRights {
-    _View = 1,
+    _None,
+    _View,
     _Station,
     _ViewAndStation,
     _Worklist,
@@ -37,7 +39,8 @@ enum VirtualEntryPointRights {
  * Rights for the case structure (nodes)
  */
 enum NodeRights {
-    _Add = 1,
+    _None,
+    _Add,
     _Edit,
     _AddAndEdit,
     _Duplicate,
@@ -59,7 +62,8 @@ enum NodeRights {
  * Rights for the reports
  */
 enum ReportRights {
-    _View = 1,
+    _None,
+    _View,
     _Create,
     _ViewAndCreate,
     _Edit,
@@ -80,7 +84,8 @@ enum ReportRights {
  * Rights for the Progress of reports
  */
 enum ReportProgress {
-    _Send = 1,
+    _None,
+    _Send,
     _Close,
     _Full
 }
@@ -89,7 +94,8 @@ enum ReportProgress {
  * Rights for Visa 1 to 3
  */
 enum ReportVisa {
-    _Visa1 = 1,
+    _None,
+    _Visa1,
     _Visa2,
     _Visa1And2,
     _Visa3,
@@ -102,7 +108,8 @@ enum ReportVisa {
  * Rights for Visa 4 to 6
  */
 enum ReportVisaSupp {
-    _Visa4 = 1,
+    _None,
+    _Visa4,
     _Visa5,
     _Visa4And5,
     _Visa6,
