@@ -49,23 +49,26 @@ export namespace ACL {
     /**
      * 
      * Replace the right of the group in an acl
-     * @param rights 
+     * @param acl 
      * @param groupid 
      * @param right 
      * @param kind 
      */
 
-    export function replaceInAcl(rights: string, groupid: number, right: VirtualEntryPointRights, kind: RightKind._VirtualEntryPoint): string;
-    export function replaceInAcl(rights: string, groupid: number, right: HospDefRights, kind: RightKind._HospDef): string;
-    export function replaceInAcl(rights: string, groupid: number, right: NodeRights, kind: RightKind._Nodes): string;
-    export function replaceInAcl(rights: string, groupid: number, right: ReportRights, kind: RightKind._Reports): string;
-    export function replaceInAcl(rights: string, groupid: number, right: ReportProgress, kind: RightKind._ReportProgress): string;
-    export function replaceInAcl(rights: string, groupid: number, right: ReportVisa, kind: RightKind._Visa): string;
-    export function replaceInAcl(rights: string, groupid: number, right: ReportVisaSupp, kind: RightKind._VisaSupp): string;
-    export function replaceInAcl(rights: string, groupid: number, right: RightList, kind: RightKind): string {
+    export function replaceInAcl(acl: string, groupid: number, right: VirtualEntryPointRights, kind: RightKind._VirtualEntryPoint): string;
+    export function replaceInAcl(acl: string, groupid: number, right: HospDefRights, kind: RightKind._HospDef): string;
+    export function replaceInAcl(acl: string, groupid: number, right: NodeRights, kind: RightKind._Nodes): string;
+    export function replaceInAcl(acl: string, groupid: number, right: ReportRights, kind: RightKind._Reports): string;
+    export function replaceInAcl(acl: string, groupid: number, right: ReportProgress, kind: RightKind._ReportProgress): string;
+    export function replaceInAcl(acl: string, groupid: number, right: ReportVisa, kind: RightKind._Visa): string;
+    export function replaceInAcl(acl: string, groupid: number, right: ReportVisaSupp, kind: RightKind._VisaSupp): string;
+    export function replaceInAcl(acl: string, groupid: number, right: RightList, kind: RightKind): string {
         if (!Utils.isCodeValid(right, kind)) {
             throw new Error(`Invalid code "${right}" for "${kind}"`)
         }
-        return rights.substr(0, groupid - 1) + Encode.encodeRight(right) + rights.substr(groupid);
+        if(acl.length < groupid) {
+            throw new Error(`Unable to replace for group "${groupid}"`)
+        }
+        return acl.substr(0, groupid - 1) + Encode.encodeRight(right) + acl.substr(groupid);
     }
 }

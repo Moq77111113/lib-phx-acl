@@ -56,7 +56,7 @@ export namespace Utils {
      * @returns number
      */
     export function HexaToDecimal(code: string | number): number {
-        if (isNaN(parseInt(code.toString(), 16))) {
+        if (isNaN(parseInt(code.toString(), 16)) || code > 15) {
             throw new Error(`"${code}" is not a hexadecimal value`)
         }
         return parseInt(code.toString(), 16);

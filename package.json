@@ -1,5 +1,5 @@
 {
-  "name": "lib-phx-rights",
+  "name": "lib-phx-acl",
   "version": "0.0.1",
   "description": "Librairy for tooling on Phoenix hexadecimal rights",
   "main": "dist/index.js",
@@ -11,7 +11,8 @@
   "keywords": [
     "lib",
     "phoenix",
-    "rights"
+    "rights",
+    "acls"
   ],
   "author": "Quentin Moessner <quentin.moessner@gmail.com>",
   "license": "GPL-3.0",
