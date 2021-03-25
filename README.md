@@ -19,7 +19,7 @@ This Library exposes some tools to deal with CGM Clincal ACL's.
 - [encode]([#encode])
 - [utils](#utils)
 
-##<a name="intro"> Introduction</a>
+## <a name="intro"> Introduction</a>
 In order to understand how the rights works in the software, here are some explanations.
 
 The rights are stored in a table `APPACLS`,  this table is composed of some fileds but we will be interested in the `ACLDEF` field.
@@ -60,7 +60,7 @@ Todo:
 - Form fields
 - ...
 
-##<a name="models"> Models</a>
+## <a name="models"> Models</a>
 
 The models exposes enums, interfaces, types usefull for the lib usage
 
@@ -108,7 +108,7 @@ const humanizableValues = Partial<HumanizableObject> = {
 };
 ``` 
 
-##<a name="acl"> Acl</a>
+## <a name="acl"> Acl</a>
 
 This is the main tool, it exposes 3 functions with multiple override 
 
@@ -201,7 +201,7 @@ ACL.replaceInAcl('2A3', 2, HospDefRights._Select, RightKind._HospDef);
 ```
 
 
-##<a name="decode"> Decode</a>
+## <a name="decode"> Decode</a>
 
 It exposes currently the function `humanize`
 
@@ -228,7 +228,7 @@ humanizationMap.set(HospDefRights._AddAndWorklist, 'add - worklist');
 Decode.humanize('A', RightKind._HospDef)
 // output : 'add - worklist'
 ```
-##<a name="encode"> Encode</a>
+## <a name="encode"> Encode</a>
 
 It exposes currently the function `endodeRight`
 

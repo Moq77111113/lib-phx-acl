@@ -114,7 +114,8 @@ enum ReportVisaSupp {
     _Visa4And5,
     _Visa6,
     _Visa4And6,
-    _Visa5And6
+    _Visa5And6,
+    _Visa456
 }
 export {
     HospDefRights,
@@ -171,4 +172,13 @@ export type HumanizableObject = {
     {
         [x: number]: string
     }
+}
+export type HumanizableObject2 = {
+    [RightKind._HospDef]: {[x in HospDefRights]: string},
+    [RightKind._Nodes]: {    [x in NodeRights] : string},
+    [RightKind._VirtualEntryPoint]: { [x in VirtualEntryPointRights]: string},
+    [RightKind._Reports]: {[x in ReportRights]: string},
+    [RightKind._ReportProgress]: {[x in ReportProgress]: string},
+    [RightKind._Visa]: {[x in ReportVisa]: string},
+    [RightKind._VisaSupp]: {[x in ReportVisaSupp]: string},
 }

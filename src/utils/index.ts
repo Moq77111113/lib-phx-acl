@@ -88,10 +88,9 @@ export namespace Utils {
                 if (values) {
                     let map = new Map<number, string>()
                     Object.keys(values)
+                        .filter(right => right && !isNaN(Number(right)))
                         .map(right => Number(right))
-                        .forEach(right => {
-                            map.set(right, values[right])
-                        });
+                        .forEach(right => map.set(right, values[right]));
                     maps[rightkind as RightKind] = map;
                 }
             })
